@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Arts Musants{% endblock %}
+
+{% block body %}
+
+
+<div class="jumbotron text-center">
+    <h1>Arts Musants</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quae! Temporibus sequi est labore dolor veritatis
+        sed, quia incidunt sunt, corrupti dolore aspernatur saepe. Sunt necessitatibus ullam quasi itaque placeat?</p>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4 bg-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque alias totam molestias
+            distinctio repellat error voluptatum rerum, id repudiandae dolorem itaque, facilis eos cumque repellendus
+            ipsum labore ex suscipit sed.</div>
+        <div class="col-4 bg-success">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptas nam ipsam quos nobis
+            fugit facere atque voluptatibus reiciendis quam, accusantium repellat consectetur omnis labore ut impedit
+            vero eius itaque!</div>
+        <div class="col-4 bg-danger">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptas nam ipsam quos nobis
+            fugit facere atque voluptatibus reiciendis quam, accusantium repellat consectetur omnis labore ut impedit
+            vero eius itaque!</div>
+    </div>
+</div>
+
+<style>
+    .example-wrapper {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+
+    .example-wrapper code {
+        background: #F5F5F5;
+        padding: 2px 6px;
+    }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at
+            <code><a
+                    href="{{ '/home/barbet/symfonyProjects/artsmusants2/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code>
+        </li>
+        <li>Your templatce at
+            <code><a
+                    href="{{ '/home/barbet/symfonyProjects/artsmusants2/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}
