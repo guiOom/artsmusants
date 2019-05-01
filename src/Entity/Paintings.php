@@ -5,9 +5,16 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PaintingsRepository")
+ * @UniqueEntity(
+ *  fields="title",
+ *  errorPath="title",
+ *  message="Ce titre existe déjà !"
+ * )
  */
 class Paintings
 {
@@ -53,6 +60,16 @@ class Paintings
      */
     private $sale;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $price;
+
+    /**
+     * @ORM\Column(type="string", length=255, unique=true)
+     */
+    private $title;
+
     public function __construct()
     {
         $this->bookings = new ArrayCollection();
@@ -71,6 +88,18 @@ class Paintings
     public function setCategory(?categories $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
 
         return $this;
     }
@@ -119,6 +148,18 @@ class Paintings
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

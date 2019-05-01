@@ -42,7 +42,7 @@ class Bookings
     private $end_date;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default": false})
      */
     private $canceled;
 
